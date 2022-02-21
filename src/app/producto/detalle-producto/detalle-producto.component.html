@@ -1,0 +1,15 @@
+<div class="mt-5 d-flex flex-column align-items-center" *ngIf="producto">
+  <div class="card" style="width: 18rem">
+    <div class="card-header text-center">Detalle</div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: {{ producto.id }}</li>
+      <li class="list-group-item">Nombre: {{ producto.nombre }}</li>
+      <li class="list-group-item">Precio: ${{ producto.precio }}</li>
+    </ul>
+    <div class="card-footer d-grid">
+      <button class="btn btn-outline-primary" routerLink="/">
+        <i class="fa-solid fa-rotate-left"></i> Volver
+      </button>
+    </div>
+  </div>
+</div>
