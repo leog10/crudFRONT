@@ -26,12 +26,20 @@
           />
         </div>
         <div class="d-grid mt-3">
-          <button class="btn btn-outline-success" [disabled]="!f.valid">
+          <button
+            class="btn btn-outline-success"
+            [disabled]="!f.valid"
+            type="submit"
+          >
             <i class="fa-solid fa-circle-plus"></i> Crear
           </button>
         </div>
         <div class="d-grid mt-3">
-          <button class="btn btn-outline-primary" routerLink="/lista">
+          <button
+            class="btn btn-outline-primary"
+            routerLink="/lista"
+            type="button"
+          >
             <i class="fa-solid fa-rotate-left"></i> Volver
           </button>
         </div>

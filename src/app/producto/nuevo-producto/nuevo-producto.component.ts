@@ -11,8 +11,8 @@ import { ProductoService } from 'src/app/service/producto.service';
 })
 export class NuevoProductoComponent implements OnInit {
 
-  nombre: string = '';
-  precio: number = NaN;
+  nombre!: string;
+  precio!: number;
 
   constructor(
     private productoService: ProductoService, 
