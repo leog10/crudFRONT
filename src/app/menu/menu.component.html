@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/"
+            ><i class="fa-solid fa-house"></i> Inicio</a
+          >
+        </li>
+        <li *ngIf="isLogged" class="nav-item">
+          <a class="nav-link" routerLink="/lista"
+            ><i class="fa-regular fa-rectangle-list"></i> Lista</a
+          >
+        </li>
+        <li *ngIf="!isLogged" class="nav-item">
+          <a class="nav-link" routerLink="/login"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar
+            Sesion</a
+          >
+        </li>
+        <li
+          *ngIf="isLogged"
+          class="nav-item"
+          (click)="onLogout()"
+          style="cursor: pointer"
+        >
+          <a class="nav-link"
+            ><i class="fa-solid fa-door-open"></i> Cerrar Sesion</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

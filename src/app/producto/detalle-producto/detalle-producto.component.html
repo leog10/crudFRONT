@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="mt-5 d-flex flex-column align-items-center" *ngIf="producto">
   <div class="card" style="width: 18rem">
     <div class="card-header text-center">Detalle</div>
@@ -7,7 +8,7 @@
       <li class="list-group-item">Precio: ${{ producto.precio }}</li>
     </ul>
     <div class="card-footer d-grid">
-      <button class="btn btn-outline-primary" routerLink="/">
+      <button class="btn btn-outline-primary" routerLink="/lista">
         <i class="fa-solid fa-rotate-left"></i> Volver
       </button>
     </div>

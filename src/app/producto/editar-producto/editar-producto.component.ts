@@ -26,7 +26,7 @@ export class EditarProductoComponent implements OnInit {
       this.producto = data;
     }, err => {
       this.toastr.error(err.error.mensaje, 'Fail', {timeOut: 3000, positionClass: 'toast-top-center'});
-      this.router.navigate(['/']);
+      this.router.navigate(['/lista']);
     })    
   }
 
@@ -34,7 +34,7 @@ export class EditarProductoComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.productoService.actualizar(this.producto!, id).subscribe(() => {
       this.toastr.success('Producto Actualizado', 'OK', {timeOut: 3000, positionClass: 'toast-top-center'});
-      this.router.navigate(['/']);
+      this.router.navigate(['/lista']);
     }, err => {
       this.toastr.error(err.error.mensaje, 'Fail', {timeOut: 3000, positionClass: 'toast-top-center'});
     });    

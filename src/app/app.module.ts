@@ -7,6 +7,7 @@ import { ListaProductoComponent } from './producto/lista-producto/lista-producto
 import { DetalleProductoComponent } from './producto/detalle-producto/detalle-producto.component';
 import { NuevoProductoComponent } from './producto/nuevo-producto/nuevo-producto.component';
 import { EditarProductoComponent } from './producto/editar-producto/editar-producto.component';
+import { interceptorProvider } from './interceptors/prod-interceptor.service';
 
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
@@ -14,7 +15,10 @@ import { FormsModule } from '@angular/forms'
 // external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
+import { MenuComponent } from './menu/menu.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ToastrModule } from 'ngx-toastr';
     ListaProductoComponent,
     DetalleProductoComponent,
     NuevoProductoComponent,
-    EditarProductoComponent
+    EditarProductoComponent,
+    LoginComponent,
+    RegistroComponent,
+    MenuComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

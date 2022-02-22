@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="container-sm mt-4" *ngIf="producto">
   <div class="row">
     <div class="col-md-5 mx-auto">
@@ -26,11 +27,11 @@
         </div>
         <div class="d-grid mt-3">
           <button class="btn btn-outline-success" [disabled]="!f.valid">
-            Actualizar
+            <i class="fa-solid fa-pen"></i> Actualizar
           </button>
         </div>
         <div class="d-grid mt-3">
-          <button class="btn btn-outline-primary" routerLink="/">
+          <button class="btn btn-outline-primary" routerLink="/lista">
             <i class="fa-solid fa-rotate-left"></i> Volver
           </button>
         </div>
