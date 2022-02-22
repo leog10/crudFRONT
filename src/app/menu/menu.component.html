@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/"
             ><i class="fa-solid fa-house"></i> Inicio</a
@@ -24,23 +24,28 @@
             ><i class="fa-regular fa-rectangle-list"></i> Lista</a
           >
         </li>
-        <li *ngIf="!isLogged" class="nav-item">
-          <a class="nav-link" routerLink="/login"
-            ><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar
-            Sesion</a
-          >
-        </li>
-        <li
-          *ngIf="isLogged"
-          class="nav-item"
-          (click)="onLogout()"
-          style="cursor: pointer"
-        >
-          <a class="nav-link"
-            ><i class="fa-solid fa-door-open"></i> Cerrar Sesion</a
+        <li *ngIf="isAdmin" class="nav-item">
+          <a class="nav-link" routerLink="/nuevo"
+            ><i class="fa-solid fa-circle-plus"></i> Nuevo</a
           >
         </li>
       </ul>
+      <form class="d-flex">
+        <button
+          class="btn btn-outline-success"
+          routerLink="/login"
+          *ngIf="!isLogged"
+        >
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar Sesion
+        </button>
+        <button
+          class="btn btn-outline-danger"
+          (click)="onLogout()"
+          *ngIf="isLogged"
+        >
+          <i class="fa-solid fa-door-open"></i> Cerrar Sesion
+        </button>
+      </form>
     </div>
   </div>
 </nav>

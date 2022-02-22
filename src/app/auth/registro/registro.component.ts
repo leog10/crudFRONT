@@ -12,7 +12,6 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class RegistroComponent implements OnInit {
 
-  isLogged: boolean = false;  
   nuevoUsuario: any;
   nombre!: string;
   nombreUsuario!: string;
@@ -28,9 +27,6 @@ export class RegistroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (this.tokenService.getToken()) {
-      this.isLogged = true;
-    }
   }
 
   onRegister(): void {

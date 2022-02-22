@@ -10,6 +10,7 @@ import { TokenService } from '../service/token.service';
 export class MenuComponent implements OnInit {
 
   isLogged: boolean = false;
+  isAdmin: boolean = false;
 
   constructor(
     private tokenService: TokenService,
@@ -17,21 +18,11 @@ export class MenuComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    if (this.tokenService.getToken()) {
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }
+      this.isLogged = this.tokenService.isLogged();
+      this.isAdmin = this.tokenService.isAdmin();
   }
 
   onLogout(): void {
     this.tokenService.logOut();
-    if (this.router.url === '/login') {
-      window.location.reload();
-    } else {
-      this.router.navigate(['/login']);
-    }
-    
   }
-
 }
